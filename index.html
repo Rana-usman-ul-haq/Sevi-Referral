@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sevi Lab-Staking</title>
+    <link rel="shortcut icon" href="./assets/images/planet.png" type="image/x-icon">
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+    <script src="./assets/js/web3.min.js"></script>
+
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" async />
+
+    <!-- Jquery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+        integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
+</head>
+
+<body>
+
+    <div id="preloader">
+        <div class="loader"></div>
+        <span id="notifyMM"></span>
+    </div>
+
+    <script src="./assets/js/index.js" type="module"></script>
+    <section>
+        <div class="container">
+
+            <div class="row row-s">
+                <div class="col-7 col-s-12">
+                    <div class="fund-me-app-wrapper animate__animated
+                            animate__bounceInLeft">
+                        <div class="crypto-main-wrapper">
+                            <div class="row">
+                                <div class="col-7">
+                                    <div class="crypto-icon-wrapper">
+                                        <div class="crypto-icon-image-wrapper">
+                                            <img src="./assets/images//planet.png" alt="Sevi Token"
+                                                srcset="./assets/images//planet.png">
+                                        </div>
+                                        <h1 class="crypto-icon-name">Sevi Lab Token Stake Program
+                                            - APR <span id="lxApr" data-lx-apr=""> 5%</span>
+                                        </h1>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="crypto-data-wrapper">
+                                <div class="row">
+                                    <div class="col-3">
+                                        <div class="contract-address">
+                                            <h3>Account: <span class="light-font-color" id="showAccount">NaN</span>
+                                            </h3>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-3">
+                                        <span>Comission earned</span><br>
+                                        <span id="getComission" class=" light-font-color">NaN</span>
+                                    </div>
+                                    <div class="col-3">
+                                        <span>Staked
+                                            Until</span><br>
+                                        <span id="unlockTime" class=" light-font-color">NaN</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <br>
+                        </div>
+                        <div class="stake-wrapper">
+                            <div>
+                                <b>
+                                    <span>Buy SEVI Tokens:</span>
+                                    <a class=" light-font-color" style="color: coral"
+                                        href="https://tokenpresale.sevilabmetaverse.net" target="_blank">
+                                        https://tokenpresale.sevilabmetaverse.net
+                                    </a>
+                                </b>
+                                <br>
+                                <br>
+                                <div class="referral-link">
+                                    <b>Referral Link: <span id="referralLink" style="color:blue">NaN</span></b>
+                                </div>
+                                <br>
+                                <b>Referral Levels:</b>
+                                <br>
+                                <br>
+                                <b>
+                                    <span>Level 1 = <span style="color:rgb(3, 138, 182)">2%</span></span>
+                                    <br>
+                                    <span>Level 2 = <span style="color:rgb(3, 138, 182)">1%</span></span>
+                                    <br>
+                                    <span>Level 3 = <span style="color:rgb(3, 138, 182)">1%</span></span>
+                                    <br>
+                                    <span>Level 4 = <span style="color:rgb(3, 138, 182)">0.5%</span></span>
+                                    <br>
+                                    <span>Level 5 = <span style="color:rgb(3, 138, 182)">0.5%</span></span>
+                                </b>
+                                <br>
+                                <br>
+                            </div>
+                            <h3>Stake your tokens and earn rewards!</h3>
+                            <br>
+                            <h3>Refer your friends and earn SEVI Tokens!</h3>
+                            <br>
+                            <p class="note-style" style="font-weight: bold;"><u>Warning:</u> DO NOT TRY TO UNSTAKE
+                                BEFORE TIME
+                                LIMIT!!</p>
+                            <br>
+                            <p class="note-style" style="font-weight: bold;">Please check before staking, as one
+                                account can only stake once until unlock time</p>
+                        </div>
+
+
+
+                        <div>
+                            <div class=" animate__animated animate__bounceInRight">
+                                <div class="sidebar-wrapper">
+                                    <div style="align-items: center">
+                                        <div style="display: flex">
+                                            <h1 style="margin-left: 15%">Enter your Amount here </h1>
+                                            <h1 style="margin-left: 23%">Enter Referral Address here <p><i>(If
+                                                        Any)</i></p>
+
+                                            </h1>
+                                        </div>
+                                        <div class="amount-quantity-wrapper">
+                                            <input id="standard" class="input-number" placeholder="0" style="width: 28%"
+                                                type="text" value="">
+                                            <input id="address" type="text" placeholder="0x" class="address" value="" />
+
+                                        </div>
+                                    </div>
+
+                                    <p class="your-balance" style="font-weight: bolder">Balance:
+                                        <span id="showBalance">NaN</span>
+                                    </p>
+
+                                    <div class="button-wrapper">
+                                        <button id="connectButton" class="connect-button" type="button"
+                                            data-connect="">Connect</button>
+                                    </div>
+
+                                    <div class="select">
+                                        <select id="stakeDays">
+                                            <option class="stakeDays" value="30">30
+                                                Days</option>
+                                            <option class="stakeDays" value="90">90
+                                                Days</option>
+                                            <option class="stakeDays" value="180">180
+                                                Days</option>
+                                            <option class="stakeDays" value="365">365
+                                                Days</option>
+                                        </select>
+                                    </div>
+
+                                    <div id="stakeButton" class="button-wrapper">
+                                        <button id="stake" class="secondary-button
+                                        animate__animated animate__swing">Stake Sevi</button>
+                                        <button id="unstake" class="secondary-button
+                                        animate__animated animate__swing">Unstake Sevi</button>
+                                        <button id="reward" class="secondary-button
+                                        animate__animated animate__swing">Claim Comission</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+
+    </section>
+
+</body>
+
+</html>
