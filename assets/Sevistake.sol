@@ -568,8 +568,7 @@ contract Referral is Ownable {
     function UnStaking() public {
         Referrer storage user = RQ[msg.sender];
         if (user.staking_days < 1) revert("Please stake first");
-        if (user.timestamp > block.timestamp)
-            revert("you can't unstake until time limit is complete");
+        if(user.timestamp > block.timestamp) revert("you can't unstake until time limit is complete");
         uint values = (user.stakedAmount * user.APR) / 100;
         uint result = (values) / (user.staking_days);
 
@@ -614,7 +613,7 @@ contract Referral is Ownable {
             token.balanceOf(address(this)) > 0,
             "There is not enough token in contract"
         );
-        token.transferFrom(address(this), msg.sender, amount * 1 * 10 ** 18);
+        token.transfer(msg.sender, amount * 1 * 10 ** 18);
     }
 
     function checkAmount() external view returns (uint256) {
